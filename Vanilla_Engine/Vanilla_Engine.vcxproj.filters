@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\WindowManager">
+      <UniqueIdentifier>{f473aa1b-f45e-4163-87f0-69099231d840}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\WindowManager">
+      <UniqueIdentifier>{ab04ba42-e6b2-46eb-b45a-78dbac746e68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DeviceManager">
+      <UniqueIdentifier>{820db098-e7b0-4c40-8d20-c1fb3853a811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DeviceManager">
+      <UniqueIdentifier>{7876231a-d728-4a3f-9b81-6c12e5832b13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DebugHelper">
+      <UniqueIdentifier>{5511de80-3e26-4af3-bba0-8922e31f3f50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DebugHelper">
+      <UniqueIdentifier>{364612d6-da0a-40e3-93c5-7a259f3c6151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Global">
+      <UniqueIdentifier>{5367ae7f-a2d7-495b-8a83-cc552d760428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderer">
+      <UniqueIdentifier>{d3969438-845e-4e64-a37e-dda155c723c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderer">
+      <UniqueIdentifier>{982b4897-54ac-470c-951e-c30ce81d74e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Camera">
+      <UniqueIdentifier>{4320ae62-935d-41bf-aea2-c260dd3200db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Camera">
+      <UniqueIdentifier>{8aa18249-d26a-4195-975d-469109819459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{20137800-c02b-495a-8c4a-7e80860ee8ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ApplicationCore">
+      <UniqueIdentifier>{23d0e509-0cc7-4a31-9732-4876bb3fc298}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ApplicationCore">
+      <UniqueIdentifier>{700e1f0a-79b2-49a0-b6bc-7e6bc3bbc757}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Timer">
+      <UniqueIdentifier>{0426b09b-ec1e-4ca3-8dc0-eba8cc2fce85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Timer">
+      <UniqueIdentifier>{bdca8c85-4ab2-4794-95a9-8507463c1b00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\GridShaders">
+      <UniqueIdentifier>{42700181-f262-4a02-8404-ffd8a7b3ccd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\DeferredShader_Default">
+      <UniqueIdentifier>{75218f05-fa30-4e81-98f4-e2e8529f03dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\LightShaders">
+      <UniqueIdentifier>{87e52719-221f-4304-afb4-cc4303e44b7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entity">
+      <UniqueIdentifier>{514db366-4191-4738-811c-fc906cd7928c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity">
+      <UniqueIdentifier>{665c7333-f258-4de7-ba3b-9ccfc6c46b18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MeshManager">
+      <UniqueIdentifier>{dfcf513e-f3e9-4916-bb8a-01ecad942ec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MeshManager">
+      <UniqueIdentifier>{cdef37da-fe18-43f6-8d29-01378eb64c3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MeshManager\Meshes">
+      <UniqueIdentifier>{1ca55592-fdd3-444a-bfea-5a2f330dcb40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Components">
+      <UniqueIdentifier>{b64d66d1-738a-49b0-83a2-dc856b1a1684}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MeshManager\Meshes">
+      <UniqueIdentifier>{04d0cc44-ffb7-4701-9620-94c6e75c765d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Components">
+      <UniqueIdentifier>{d275a728-4f35-4410-9ba0-9fdceb0bbc59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TransformManager">
+      <UniqueIdentifier>{b4adaca9-f15e-410a-a2a5-33e31aa124c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TransformManager">
+      <UniqueIdentifier>{103eb892-f543-48ef-86ed-f62a6e1c5a8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TransformManager\Transform">
+      <UniqueIdentifier>{783bdd7d-d286-4617-9068-5bb262a5a97c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TransformManager\Transform">
+      <UniqueIdentifier>{f842e28e-bbee-4e66-8a50-08e96b939976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderer\Light">
+      <UniqueIdentifier>{563f255f-be87-4afd-bc3a-b83008e1a4c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\LightManager">
+      <UniqueIdentifier>{f11ff18e-c6f7-45c9-8807-9276b4087bcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LightManager">
+      <UniqueIdentifier>{ebaace02-b791-48e3-aca6-c05799c48841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\LightManager\Light">
+      <UniqueIdentifier>{bf8f6aa2-bb9c-43cc-9add-f234600595ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\LightManager\Light\Point">
+      <UniqueIdentifier>{18caa7f9-daa7-40c9-8293-ec6dbcd7ab45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Skybox">
+      <UniqueIdentifier>{20897e13-7c4c-4a12-b960-d8cc6550f85a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderer\Skybox">
+      <UniqueIdentifier>{48aa68ee-3f59-498d-8ac2-7fd3f5e64a7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderer\Deferred">
+      <UniqueIdentifier>{b0603379-59ee-4f10-9676-eb2ee2ff787d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderer\Light">
+      <UniqueIdentifier>{9acf73dd-4b74-4a61-a813-28853272e1e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderer\Skybox">
+      <UniqueIdentifier>{e26ba24c-f3e3-4d90-ab9c-d137c9c0d506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderer\Deferred">
+      <UniqueIdentifier>{c164d6e9-f49a-4541-afbd-d90a955254ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderer\Grid">
+      <UniqueIdentifier>{a82cfae6-6b79-4e8d-9467-6b207f9245fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderer\Grid">
+      <UniqueIdentifier>{a1129723-c497-4acc-829b-82bb785239cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LightManager\Light">
+      <UniqueIdentifier>{216c9beb-c815-4ff0-bb8a-18903bb93197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LightManager\Light\Point">
+      <UniqueIdentifier>{3743ae37-96a6-4497-ad05-b7a7cfc432f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MaterialManager">
+      <UniqueIdentifier>{0a53ca47-880c-4d91-9955-b3b82a2cee87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MaterialManager\WicLoader">
+      <UniqueIdentifier>{8dacfab5-59f7-49e6-bbba-a22b747ba60d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MaterialManager\TextureCube">
+      <UniqueIdentifier>{e80c67f9-68bf-4c74-80f8-a48a55c4cb34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MaterialManager\DDSTextureLoader">
+      <UniqueIdentifier>{4c38408e-764b-41a7-b2cf-f5e53ef20c11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MaterialManager">
+      <UniqueIdentifier>{1bd4be0c-2c93-4320-9982-b03d5d155970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MaterialManager\WicLoader">
+      <UniqueIdentifier>{55374502-7e79-4e3e-b727-6005ebee1919}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MaterialManager\DDSTextureLoader">
+      <UniqueIdentifier>{cdbaa556-5cfc-4b57-9bbf-fc99722985cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MaterialManager\TextureCube">
+      <UniqueIdentifier>{846ab74d-7f17-4931-a2c6-539086723800}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MaterialManager\Material">
+      <UniqueIdentifier>{e552f6b4-ec07-4586-958f-753524466af5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MaterialManager\Material">
+      <UniqueIdentifier>{3e0907b0-d14b-43a2-975f-c6aa9254ee56}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowManager.cpp">
+      <Filter>Source Files\WindowManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugHelper.cpp">
+      <Filter>Source Files\DebugHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceManager.cpp">
+      <Filter>Source Files\DeviceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files\Renderer\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationCore.cpp">
+      <Filter>Source Files\ApplicationCore</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshManager.cpp">
+      <Filter>Source Files\MeshManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files\MeshManager\Meshes</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh_Standard.cpp">
+      <Filter>Source Files\MeshManager\Meshes</Filter>
+    </ClCompile>
+    <ClCompile Include="Components.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="WICTextureLoader.cpp">
+      <Filter>Source Files\MaterialManager\WicLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformManager.cpp">
+      <Filter>Source Files\TransformManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Source Files\TransformManager\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="Pointlight.cpp">
+      <Filter>Source Files\LightManager\Light\Point</Filter>
+    </ClCompile>
+    <ClCompile Include="LightMananger.cpp">
+      <Filter>Source Files\LightManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Skybox.cpp">
+      <Filter>Source Files\Renderer\Skybox</Filter>
+    </ClCompile>
+    <ClCompile Include="DeferredBuffersClass.cpp">
+      <Filter>Source Files\Renderer\Deferred</Filter>
+    </ClCompile>
+    <ClCompile Include="DeferredShaderClass.cpp">
+      <Filter>Source Files\Renderer\Deferred</Filter>
+    </ClCompile>
+    <ClCompile Include="LightShaderClass.cpp">
+      <Filter>Source Files\Renderer\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureCube.cpp">
+      <Filter>Source Files\MaterialManager\TextureCube</Filter>
+    </ClCompile>
+    <ClCompile Include="DDSTextureLoader.cpp">
+      <Filter>Source Files\MaterialManager\DDSTextureLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialManager.cpp">
+      <Filter>Source Files\MaterialManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Source Files\MaterialManager\Material</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Includes\Vanilla\ApplicationCore.h">
+      <Filter>Header Files\ApplicationCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Camera.h">
+      <Filter>Header Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Components.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\DebugHelper.h">
+      <Filter>Header Files\DebugHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\DeviceManager.h">
+      <Filter>Header Files\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Entity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Datatypes.h">
+      <Filter>Header Files\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\MacroDefinitions.h">
+      <Filter>Header Files\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\VertexTypes.h">
+      <Filter>Header Files\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\LightManager.h">
+      <Filter>Header Files\LightManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Pointlight.h">
+      <Filter>Header Files\LightManager\Light\Point</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\MeshManager.h">
+      <Filter>Header Files\MeshManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Mesh.h">
+      <Filter>Header Files\MeshManager\Meshes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Mesh_Standard.h">
+      <Filter>Header Files\MeshManager\Meshes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Renderer.h">
+      <Filter>Header Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\DeferredBuffersClass.h">
+      <Filter>Header Files\Renderer\Deferred</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\DeferredShaderClass.h">
+      <Filter>Header Files\Renderer\Deferred</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Grid.h">
+      <Filter>Header Files\Renderer\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\LightShaderClass.h">
+      <Filter>Header Files\Renderer\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Skybox.h">
+      <Filter>Header Files\Renderer\Skybox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\DDSTextureLoader.h">
+      <Filter>Header Files\MaterialManager\DDSTextureLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\TextureCube.h">
+      <Filter>Header Files\MaterialManager\TextureCube</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\WICTextureLoader.h">
+      <Filter>Header Files\MaterialManager\WicLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Timer.h">
+      <Filter>Header Files\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\TransformManager.h">
+      <Filter>Header Files\TransformManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Transform.h">
+      <Filter>Header Files\TransformManager\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\WindowManager.h">
+      <Filter>Header Files\WindowManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\MaterialManager.h">
+      <Filter>Header Files\MaterialManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Includes\Vanilla\Material.h">
+      <Filter>Header Files\MaterialManager\Material</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\GridShaders\GridPS.hlsl">
+      <Filter>Shaders\GridShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\GridShaders\GridVS.hlsl">
+      <Filter>Shaders\GridShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\DeferredShader_Default\DeferredFragment_Default.hlsl">
+      <Filter>Shaders\DeferredShader_Default</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\DeferredShader_Default\DeferredVertex_Default.hlsl">
+      <Filter>Shaders\DeferredShader_Default</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\LightShaders\LightPS.hlsl">
+      <Filter>Shaders\LightShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\LightShaders\LightVS.hlsl">
+      <Filter>Shaders\LightShaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\Skybox\SkyboxPS.hlsl">
+      <Filter>Shaders\Skybox</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\Skybox\SkyboxVS.hlsl">
+      <Filter>Shaders\Skybox</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>

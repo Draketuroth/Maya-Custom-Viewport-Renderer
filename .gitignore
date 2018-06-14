@@ -20,6 +20,9 @@
 *.mod
 *.smod
 
+# Visual Studio 2017 cache/options directory
+.vs/
+
 # Compiled Static libraries
 *.lai
 *.la
