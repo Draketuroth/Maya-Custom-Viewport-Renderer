@@ -213,7 +213,7 @@ void CallbackManager::IterateScene() {
 		{
 
 			// attach the function set to the object
-			MFnMesh mesh(meshIt.item());
+			MFnMesh mesh(meshIt.currentItem());
 
 			// only want non-history items
 			if (!mesh.isIntermediateObject()) {
@@ -243,7 +243,7 @@ void CallbackManager::IterateScene() {
 		{
 
 			// attach the function set to the object
-			MFnPointLight pointLight(lightIt.item());
+			MFnPointLight pointLight(lightIt.currentItem());
 
 			// only want non-history items
 			if (!pointLight.isIntermediateObject()) {
@@ -270,7 +270,8 @@ MObject CallbackManager::findShader(MObject& setNode) {
 	MFnDependencyNode fnNode(setNode);
 
 	// We must go through the surfaceShader plug to find the connected shaders of this mesh
-	MPlug shaderPlug = fnNode.findPlug("surfaceShader");
+	MStatus status = MS::kSuccess;
+	MPlug shaderPlug = fnNode.findPlug("surfaceShader", true, &status);
 
 	// Shader plug should never be null for a valid shading group node set!
 	if (!shaderPlug.isNull()) {
@@ -907,7 +908,7 @@ void CallbackManager::attributeVertexCallback(MNodeMessage::AttributeMessage msg
 		MStatus status = MS::kSuccess;
 
 		// Was the attribute a point?
-		MPlug vertexPlug = MFnDependencyNode(plug.node()).findPlug("pnts", &status);
+		MPlug vertexPlug = MFnDependencyNode(plug.node()).findPlug("pnts", true, &status);
 
 		if (status == MS::kSuccess) {
 
@@ -1004,7 +1005,7 @@ void CallbackManager::attributeMaterialCallback(MNodeMessage::AttributeMessage m
 		// If the material is Phong, we want the cosine power
 		if (plug.node().hasFn(MFn::kPhong))
 		{
-			MPlug cosinePowerPlug = MFnDependencyNode(plug.node()).findPlug("cosinePower", &status);
+			MPlug cosinePowerPlug = MFnDependencyNode(plug.node()).findPlug("cosinePower", true, &status);
 			if (status == MS::kSuccess)
 			{
 				MGlobal::displayInfo("Found cosine power");
@@ -1020,7 +1021,7 @@ void CallbackManager::attributeMaterialCallback(MNodeMessage::AttributeMessage m
 		}
 
 		// Most importantly, we require the color from the material
-		MPlug colorPlug = MFnDependencyNode(plug.node()).findPlug("color", &status);
+		MPlug colorPlug = MFnDependencyNode(plug.node()).findPlug("color", true, &status);
 		if (status == MS::kSuccess)
 		{
 
@@ -1084,7 +1085,7 @@ void CallbackManager::attributeLightCallback(MNodeMessage::AttributeMessage msg,
 		MStatus status = MS::kSuccess;
 
 		// Was the attribute a color?
-		MPlug colorPlug = MFnDependencyNode(plug.node()).findPlug("color", &status);
+		MPlug colorPlug = MFnDependencyNode(plug.node()).findPlug("color", true, &status);
 
 		if (status == MS::kSuccess)
 		{
@@ -1726,9 +1727,7 @@ void CallbackManager::CreateVertexData(MFnMesh& mesh, vector<Vertex> &vertices) 
 				secondTriangleVertices[2] = triangleVertices[5];
 
 				if (status == MS::kSuccess)
-
 				{
-
 					Vertex v1;
 					Vertex v2;
 					Vertex v3;
@@ -1781,9 +1780,10 @@ void CallbackManager::CreateVertexData(MFnMesh& mesh, vector<Vertex> &vertices) 
 					v3.uv.y = v[firstUVID[2]];
 					v3.uv.y = 1 - v3.uv.y;
 
+					// Push back in clockwise-order!
 					vertices.push_back(v1);
-					vertices.push_back(v2);
 					vertices.push_back(v3);
+					vertices.push_back(v2);
 
 					Vertex v4;
 					Vertex v5;
@@ -1837,8 +1837,9 @@ void CallbackManager::CreateVertexData(MFnMesh& mesh, vector<Vertex> &vertices) 
 					v6.uv.y = v[secondUVID[2]];
 					v6.uv.y = 1 - v6.uv.y;
 
-					vertices.push_back(v4);
+					// Push back in clockwise-order!
 					vertices.push_back(v5);
+					vertices.push_back(v4);
 					vertices.push_back(v6);
 
 
@@ -1918,9 +1919,10 @@ void CallbackManager::CreateVertexData(MFnMesh& mesh, vector<Vertex> &vertices) 
 					v3.uv.x = u[firstUVID[2]];
 					v3.uv.y = v[firstUVID[2]];
 
+					// Push back in clockwise-order!
 					vertices.push_back(v1);
-					vertices.push_back(v2);
 					vertices.push_back(v3);
+					vertices.push_back(v2);
 				}
 
 				else {
@@ -1956,7 +1958,7 @@ void CallbackManager::CreateMaterialData(MObject &shaderNode, MsgMaterial& mater
 		// If the material is Phong, we want the cosine power
 		if (shaderNode.hasFn(MFn::kPhong))
 		{
-			MPlug cosinePowerPlug = MFnDependencyNode(shaderNode).findPlug("cosinePower", &status);
+			MPlug cosinePowerPlug = MFnDependencyNode(shaderNode).findPlug("cosinePower", true, &status);
 			if (status == MS::kFailure)
 			{
 
@@ -1972,7 +1974,7 @@ void CallbackManager::CreateMaterialData(MObject &shaderNode, MsgMaterial& mater
 		}
 
 		// Find the color plug of the shader node
-		MPlug colorPlug = MFnDependencyNode(shaderNode).findPlug("color", &status);
+		MPlug colorPlug = MFnDependencyNode(shaderNode).findPlug("color", true, &status);
 		if (status == MS::kSuccess)
 		{
 
@@ -1982,8 +1984,8 @@ void CallbackManager::CreateMaterialData(MObject &shaderNode, MsgMaterial& mater
 			// If a texture was found, grab the texture path
 			if (!dgIt.isDone())
 			{
-				MObject textureNode = dgIt.thisNode();
-				MPlug filenamePlug = MFnDependencyNode(textureNode).findPlug("fileTextureName");
+				MObject textureNode = dgIt.currentItem();
+				MPlug filenamePlug = MFnDependencyNode(textureNode).findPlug("fileTextureName", true, &status);
 				MString textureName;
 				filenamePlug.getValue(textureName);
 				MGlobal::displayInfo("Texture Node Name: " + MFnDependencyNode(textureNode).name());
