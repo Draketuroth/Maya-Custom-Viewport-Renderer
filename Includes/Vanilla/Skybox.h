@@ -38,7 +38,6 @@ private:
 	D3D11_MAPPED_SUBRESOURCE skyboxMappedResource;
 	ID3D11SamplerState* skyboxSampler;
 
-	ID3D11RasterizerState* rasterizerState;
 	ID3D11VertexShader* skyVertexShader;
 	ID3D11PixelShader* skyPixelShader;
 	ID3D11InputLayout* skyLayout;

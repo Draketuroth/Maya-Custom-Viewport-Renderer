@@ -30,7 +30,6 @@ void Skybox::Initialize(ID3D11Device* gDevice) {
 	skyboxTransform = ApplicationCore::GetInstance()->GetTransformManager()->CreateTransformBuffer();
 	cubemap = ApplicationCore::GetInstance()->GetMaterialManager()->CreateDDSTexture(L"Textures//Skyboxes//SunSky.dds", 1024);
 	sphere = ApplicationCore::GetInstance()->GetMeshManager()->GenerateSphere(400, 400, 400);
-	rasterizerState = ApplicationCore::GetInstance()->GetRenderer()->GetDeferredCore().CreateRasterizer(gDevice, D3D11_FILL_SOLID, D3D11_CULL_NONE);
 	skyboxSampler = ApplicationCore::GetInstance()->GetMaterialManager()->CreateTextureSampler(D3D11_FILTER_MIN_MAG_MIP_LINEAR);
 
 }
@@ -40,8 +39,6 @@ void Skybox::Shutdown() {
 	SAFE_RELEASE(skyVertexShader);
 	SAFE_RELEASE(skyPixelShader);
 	SAFE_RELEASE(skyLayout);
-
-	SAFE_RELEASE(rasterizerState);
 }
 
 bool Skybox::InitializeSkyboxShaders(ID3D11Device* gDevice) {
@@ -186,31 +183,29 @@ void Skybox::Update() {
 
 void Skybox::Render(ID3D11DeviceContext* gDeviceContext) {
 
-	// Set vertex buffer stride and offset
+	//Set vertex buffer stride and offset
 	unsigned int stride = sizeof(Vertex);
 	unsigned int offset = 0;
-
+	
 	gDeviceContext->VSSetShader(skyVertexShader, nullptr, 0);
 	gDeviceContext->PSSetShader(skyPixelShader, nullptr, 0);
-
+	
 	gDeviceContext->VSSetConstantBuffers(0, 1, ApplicationCore::GetInstance()->GetConstBuffer());
 	gDeviceContext->VSSetConstantBuffers(1, 1, &skyboxTransform.transformBuffer);
 	gDeviceContext->PSSetShaderResources(0, 1, &cubemap);
-
+	
 	gDeviceContext->PSSetSamplers(0, 1, &skyboxSampler);
-
+	
 	// Set the vertex buffer for the input assembler
 	gDeviceContext->IASetVertexBuffers(0, 1, &sphere.vertexBuffer, &stride, &offset);
-
+	
 	// Set the index buffer for the input assembler
 	gDeviceContext->IASetIndexBuffer(sphere.indexBuffer, DXGI_FORMAT_R32_UINT, 0);
-
+	
 	gDeviceContext->IASetInputLayout(skyLayout);
-
+	
 	// Set the primitive topology to line list
 	gDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-
-	gDeviceContext->RSSetState(rasterizerState);
 
 	gDeviceContext->DrawIndexed(sphere.indices.size(), 0, 0);
 }

@@ -28,24 +28,24 @@ void GridClass::Render(ID3D11DeviceContext* gDeviceContext) {
 	// Set vertex buffer stride and offset
 	unsigned int stride = sizeof(PointVertex);
 	unsigned int offset = 0;
-
+	
 	gDeviceContext->VSSetShader(gridVertexShader, nullptr, 0);
 	gDeviceContext->PSSetShader(gridPixelShader, nullptr, 0);
-
+	
 	gDeviceContext->VSSetConstantBuffers(0, 1, ApplicationCore::GetInstance()->GetConstBuffer());
-
+	
 	// Set the vertex input layout
 	gDeviceContext->IASetInputLayout(gridVertexLayout);
-
+	
 	// Set the vertex buffer for the input assembler
 	gDeviceContext->IASetVertexBuffers(0, 1, &gridVertexBuffer, &stride, &offset);
-
+	
 	// Set the index buffer for the input assembler
 	gDeviceContext->IASetIndexBuffer(gridIndexBuffer, DXGI_FORMAT_R32_UINT, 0);
-
+	
 	// Set the primitive topology to line list
 	gDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_LINELIST);
-
+	
 	gDeviceContext->DrawIndexed(indexCount, 0, 0);
 
 }

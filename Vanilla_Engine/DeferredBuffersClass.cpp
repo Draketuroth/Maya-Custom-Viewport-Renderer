@@ -386,7 +386,7 @@ bool DeferredBuffersClass::CreateRasterizerState(ID3D11Device* gDevice, D3D11_FI
 	return true;
 }
 
-ID3D11RasterizerState* DeferredBuffersClass::CreateRasterizer(ID3D11Device* gDevice, D3D11_FILL_MODE fillMode, D3D11_CULL_MODE cullMode) {
+ID3D11RasterizerState* DeferredBuffersClass::CreateRasterizer(ID3D11Device* gDevice, D3D11_FILL_MODE fillMode, D3D11_CULL_MODE cullMode, bool frontCounterClockwise) {
 
 	ID3D11RasterizerState* rState;
 
@@ -397,7 +397,7 @@ ID3D11RasterizerState* DeferredBuffersClass::CreateRasterizer(ID3D11Device* gDev
 
 	rasterizerDesc.FillMode = fillMode;
 	rasterizerDesc.CullMode = cullMode;
-	rasterizerDesc.FrontCounterClockwise = false;
+	rasterizerDesc.FrontCounterClockwise = frontCounterClockwise;
 
 	rasterizerDesc.DepthBias = 0;
 	rasterizerDesc.DepthBiasClamp = 0;

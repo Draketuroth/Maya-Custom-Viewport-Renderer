@@ -13,22 +13,26 @@ Renderer::~Renderer() {
 
 }
 
-void Renderer::Initialize(ID3D11Device* device, ID3D11DeviceContext* deviceContext) {
+void Renderer::Initialize(ID3D11Device* deviceIn, ID3D11DeviceContext* deviceContextIn) {
 
-	grid.Initialize(device);
+	grid.Initialize(deviceIn);
 
-	skybox.Initialize(device);
+	skybox.Initialize(deviceIn);
 
 	SetTextureSampler(ApplicationCore::GetInstance()->GetMaterialManager()->CreateTextureSampler(D3D11_FILTER_MIN_MAG_MIP_LINEAR));
 
-	deferredCore.Initialize(device);
+	deferredCore.Initialize(deviceIn);
 
-	lightShaders.Initialize(device);
+	lightShaders.Initialize(deviceIn);
 
-	CreateShaders(device);
+	CreateShaders(deviceIn);
 
-	this->deviceContext = deviceContext;
-	
+	this->deviceContext = deviceContextIn;
+	this->device = deviceIn;
+
+	// To test that winding order has been manually fixed on plugin-side, clockwise-orientation should now be assumed and FrontClockWise should be false.
+	// Additionally, we should be able to cull the back side of the face and see correct result (that is, not an inverted face direction)
+	rasterizerState = ApplicationCore::GetInstance()->GetRenderer()->GetDeferredCore().CreateRasterizer(device, D3D11_FILL_SOLID, D3D11_CULL_BACK, false);
 }
 
 void Renderer::Shutdown() {
@@ -38,6 +42,8 @@ void Renderer::Shutdown() {
 	deferredCore.Shutdown();
 	deferredShaders.Shutdown();
 	lightShaders.Shutdown();
+
+	SAFE_RELEASE(rasterizerState);
 }
 
 void Renderer::SetTextureSampler(ID3D11SamplerState* samplerState) {
@@ -109,6 +115,8 @@ bool Renderer::ResetDeferred() {
 
 	// Clear the render buffers
 	deferredCore.ClearRenderTargets(deviceContext, 0.0f, 0.0f, 0.0f, 1.0f);
+
+	deviceContext->RSSetState(rasterizerState);
 
 	RenderSkybox(deviceContext);
 

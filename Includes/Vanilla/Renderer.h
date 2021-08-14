@@ -20,7 +20,7 @@ public:
 	Renderer();
 	~Renderer();
 
-	void Initialize(ID3D11Device* device, ID3D11DeviceContext* deviceContext);
+	void Initialize(ID3D11Device* deviceIn, ID3D11DeviceContext* deviceContextIn);
 	void Shutdown();
 
 	void Update();
@@ -48,6 +48,10 @@ public:
 
 
 private:
+
+	ID3D11Device* device = nullptr;
+
+	ID3D11RasterizerState* rasterizerState;
 
 	DeferredBuffersClass deferredCore;
 	DeferredShaderClass deferredShaders;

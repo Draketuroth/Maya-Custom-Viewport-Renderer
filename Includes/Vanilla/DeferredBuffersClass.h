@@ -47,7 +47,7 @@ public:
 	void SetStaticObjectBuffer(ID3D11DeviceContext* gDeviceContext, ID3D11Buffer* vertexBuffer);
 
 	bool CreateRasterizerState(ID3D11Device* gDevice, D3D11_FILL_MODE fillMode, D3D11_CULL_MODE cullMode);
-	ID3D11RasterizerState* CreateRasterizer(ID3D11Device* gDevice, D3D11_FILL_MODE fillMode, D3D11_CULL_MODE cullMode);
+	ID3D11RasterizerState* CreateRasterizer(ID3D11Device* gDevice, D3D11_FILL_MODE fillMode, D3D11_CULL_MODE cullMode, bool frontCounterClockwise);
 
 	ID3D11ShaderResourceView* GetShaderResourceView(int);
 
